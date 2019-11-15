@@ -1,15 +1,26 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
-import { HomeScreen } from "./HomeScreen";
-import { DetailsScreen } from "./DetailsScreen";
+import { SitesScreen } from "./SitesScreen";
+import { SiteScreen } from "./SiteScreen";
+import { SiteInfoScreen } from "./SiteInfoScreen";
 
 const AppNavigator = createStackNavigator(
   {
-    Home: HomeScreen,
-    Details: DetailsScreen
+    Sites: SitesScreen,
+    SiteInfo: SiteInfoScreen,
+    Site: SiteScreen
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "Sites",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "rgb(255, 204, 51)"
+      },
+      headerTintColor: "#000",
+      headerTitleStyle: {
+        fontWeight: "bold"
+      }
+    }
   }
 );
 
