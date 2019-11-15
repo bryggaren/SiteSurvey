@@ -5,14 +5,14 @@ import { ListItem } from "react-native-elements";
 
 const list = [
   {
-    name: "ICA Tuna",
+    name: "Bengtssons Skafferi",
     icon: "home",
-    subtitle: "Tunavägen, LUND"
+    subtitle: "LUND"
   },
   {
-    name: "Biltema",
+    name: "Ebbas Ost",
     icon: "home",
-    subtitle: "Gastelyckan, LUND"
+    subtitle: "LUND"
   }
 ];
 
@@ -46,10 +46,10 @@ export class SitesScreen extends React.Component<ISitesScreenProps> {
             <ListItem
               key={i}
               leftIcon={{ name: l.icon }}
-              /* leftAvatar={{ source: { uri: l.avatar_url } }} */
               title={l.name}
               subtitle={l.subtitle}
               bottomDivider
+              onPress={() => this.props.navigation.navigate("Site")}
             />
           ))}
         </View>
