@@ -2,11 +2,11 @@ import * as React from "react";
 import { View, Text } from "react-native";
 import { Icon, ListItem, Button } from "react-native-elements";
 
-export class SiteScreen extends React.Component {
-  static navigationOptions = {
-    title: "Site"
-  };
+interface ISitesScreenProps {
+  navigation: any;
+}
 
+export class SiteScreen extends React.Component<ISitesScreenProps> {
   private locations;
 
   constructor(props: any) {
@@ -15,12 +15,16 @@ export class SiteScreen extends React.Component {
     this.locations = [1];
   }
 
+  componentDidMount() {
+    alert(this.props.navigation.state.params.title);
+  }
+
   render() {
     return (
       <>
         <View
           style={{
-            alignItems: "flex-end"
+            alignItems: "flex-end",
           }}
         >
           <Icon
@@ -40,7 +44,7 @@ export class SiteScreen extends React.Component {
               key={i}
               style={{
                 alignItems: "flex-start",
-                justifyContent: "space-between"
+                justifyContent: "space-between",
               }}
             >
               <Icon raised name="heartbeat" type="font-awesome" color="#f50" />

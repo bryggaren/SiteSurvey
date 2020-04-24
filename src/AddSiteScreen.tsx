@@ -2,20 +2,20 @@ import * as React from "react";
 import { View, StyleSheet } from "react-native";
 import { Input, Button } from "react-native-elements";
 
-interface ISiteScreenProps {
+interface IAddSiteScreenProps {
   navigation: any;
 }
 
-export class SiteInfoScreen extends React.Component<ISiteScreenProps> {
+export class AddSiteScreen extends React.Component<IAddSiteScreenProps> {
   static navigationOptions = {
-    title: "New Site"
+    title: "New Site",
   };
   render() {
     return (
       <View
         style={{
           flex: 1,
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Input
@@ -39,6 +39,6 @@ export class SiteInfoScreen extends React.Component<ISiteScreenProps> {
 const styles = StyleSheet.create({
   input: {
     marginHorizontal: 8,
-    marginVertical: 16
-  }
+    marginVertical: 16,
+  },
 });

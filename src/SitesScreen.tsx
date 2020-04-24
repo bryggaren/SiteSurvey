@@ -7,13 +7,13 @@ const list = [
   {
     name: "Bengtssons Skafferi",
     icon: "home",
-    subtitle: "LUND"
+    subtitle: "LUND",
   },
   {
     name: "Ebbas Ost",
     icon: "home",
-    subtitle: "LUND"
-  }
+    subtitle: "LUND",
+  },
 ];
 
 interface ISitesScreenProps {
@@ -21,14 +21,14 @@ interface ISitesScreenProps {
 }
 export class SitesScreen extends React.Component<ISitesScreenProps> {
   static navigationOptions = {
-    title: "Sites"
+    title: "Sites",
   };
   render() {
     return (
       <>
         <View
           style={{
-            alignItems: "flex-end"
+            alignItems: "flex-end",
           }}
         >
           <Icon
@@ -49,7 +49,9 @@ export class SitesScreen extends React.Component<ISitesScreenProps> {
               title={l.name}
               subtitle={l.subtitle}
               bottomDivider
-              onPress={() => this.props.navigation.navigate("Site")}
+              onPress={() => {
+                this.props.navigation.navigate("Site", { title: l.name });
+              }}
             />
           ))}
         </View>
